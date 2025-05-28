@@ -40,10 +40,6 @@ crontab -e
 
 但我现在实际上使用的是DDNS，在ImmortalWrt上跑[ddns-go](https://github.com/jeessy2/ddns-go)，[luci-app-ddns-go](https://github.com/sirpdboy/luci-app-ddns-go)项目。
 
-## 卡千兆网速
-
-曾经有一段时间只要多重新登录几次就有可能解锁千兆网速，但现在已经失效了。[get_giga_net](get_giga_net.sh)这个脚本的功能是不断换MAC地址登录校园网，然后通过下载一个镜像文件测试网速，如果网速达到要求则停止，如果没达到要求重新开始整个流程。需要注意的一点是这个在代码最外层循环有一个“在线控制”，这是由于如果人不在学校且在进行重新登录的操作，但是这个时候突然需要远程到实验室的设备，可以及时的停止。这个“在线控制”可以是任何能通过curl获取到的字符即可，比如自己通过caddy、nginx等做个，或者用github的gist也行。
-
 ## 其他
 
 ### 关于网速
